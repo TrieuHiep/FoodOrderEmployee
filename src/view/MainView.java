@@ -149,4 +149,9 @@ public class MainView extends JFrame {
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
     }
+
+    public void removeRow(int index) {
+        this.tableModel.removeRow(index);
+        super.repaint();
+    }
 }

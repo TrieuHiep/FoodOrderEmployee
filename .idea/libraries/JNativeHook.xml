@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="JNativeHook">
+    <CLASSES>
+      <root url="jar:///mnt/C0442BA1442B9964/Setup/Linux/libs/mailLibs/JNativeHook.jar!/" />
+      <root url="jar:///mnt/C0442BA1442B9964/Setup/Linux/libs/mailLibs/mailapi.jar!/" />
+      <root url="jar:///mnt/C0442BA1442B9964/Setup/Linux/libs/mailLibs/smtp.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

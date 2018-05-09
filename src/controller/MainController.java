@@ -5,7 +5,7 @@ import dao.BillDAOImpl;
 import dao.OrderDAO;
 import dao.OrderDAOImpl;
 import model.empkg.Employee;
-import observer.MailSender;
+import observer.EMailSender;
 import observer.OrderUpdator;
 import state.DeliveredState;
 import state.ProductOrder;
@@ -38,7 +38,7 @@ public class MainController {
 
     private void initObservers(List<ProductOrder> foodOrderList) {
         for (ProductOrder order : foodOrderList) {
-            order.attachObserver(new MailSender(order));
+            order.attachObserver(new EMailSender(order));
             order.attachObserver(new OrderUpdator(order));
         }
     }
@@ -55,6 +55,9 @@ public class MainController {
             ProductOrder productOrder = foodOrderList.get(index);
             productOrder.setState(new DeliveredState());
             productOrder.notifyAllObservers();
+            MainController.this.view.showMessage("Done!");
+            MainController.this.view.removeRow(index);
+
             Employee employee = new Employee();
             employee.setID(3);
             BillDAO billDAO = new BillDAOImpl(
